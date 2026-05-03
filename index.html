@@ -1,177 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HoneyLuxeCloverCo</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-body {
-  margin:0;
-  font-family:'Poppins', sans-serif;
-  background:#fff5f7;
-  color:#5a3e3e;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Honey Luxe Clover Co</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: #fff6f8;
+      color: #6b4b57;
+    }header {
+  text-align: center;
+  padding: 20px;
+  background: #ffe4ec;
 }
 
-/* HEADER */
-header {
-  background:white;
-  padding:15px;
-  text-align:center;
-  border-bottom:1px solid #ffd6df;
-}
-.logo {
-  font-family:'Playfair Display', serif;
-  font-size:28px;
-  color:#ff8fb1;
+header h1 {
+  font-family: 'Playfair Display', serif;
+  color: #ff7aa2;
+  margin: 0;
 }
 
-/* HERO */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  background: #ffd6e3;
+}
+
+nav a {
+  text-decoration: none;
+  color: #6b4b57;
+  font-weight: 600;
+}
+
 .hero {
-  text-align:center;
-  padding:50px 20px;
-  background:linear-gradient(#ffe6ec, #fff);
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(#ffe4ec, #fff6f8);
 }
-.hero h1 {
-  font-family:'Playfair Display', serif;
-  font-size:36px;
+
+.hero h2 {
+  font-size: 36px;
+  color: #ff7aa2;
 }
+
 .hero p {
-  color:#a36b7c;
+  margin: 10px 0 20px;
 }
+
 .btn {
-  background:#ff8fb1;
-  color:white;
-  padding:12px 25px;
-  border:none;
-  border-radius:20px;
-  cursor:pointer;
-  margin-top:15px;
+  background: #ff7aa2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
-/* SECTIONS */
-.section {
-  padding:40px 20px;
-  text-align:center;
+.collections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 40px;
 }
 
-/* GRID */
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
-  gap:15px;
-}
-
-/* CARDS */
 .card {
-  background:white;
-  padding:15px;
-  border-radius:15px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.05);
-}
-.card img {
-  width:100%;
-  border-radius:10px;
-}
-.price {
-  color:#ff6f9c;
-  font-weight:bold;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* QUOTE BUBBLE */
-.quote {
-  background:#ffe3ec;
-  padding:20px;
-  border-radius:20px;
-  margin:20px;
-  font-style:italic;
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 40px;
 }
 
-/* FOOTER */
+.product {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
 footer {
-  text-align:center;
-  padding:30px;
-  background:#fff;
-  margin-top:40px;
+  text-align: center;
+  padding: 20px;
+  background: #ffe4ec;
+  margin-top: 40px;
 }
-</style>
+
+  </style>
 </head>
-
-<body>
-
-<header>
-  <div class="logo">HoneyLuxeCloverCo</div>
-</header>
-
-<section class="hero">
-  <h1>Soft art & words</h1>
-  <p>for gentle souls</p>
+<body><header>
+  <h1>HoneyLuxeCloverCo</h1>
+  <p>soft art & words for gentle souls</p>
+</header><nav>
+  <a href="#">Home</a>
+  <a href="#">Shop</a>
+  <a href="#">Poems</a>
+  <a href="#">Art</a>
+  <a href="#">Contact</a>
+</nav><section class="hero">
+  <h2>Soft art & words</h2>
+  <p>Digital art & poems made with love</p>
   <button class="btn">Browse Collection</button>
-</section>
-
-<!-- COLLECTION -->
-<section class="section">
-  <h2>Shop by Collection</h2>
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <p>Wallpapers</p>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <p>Poems</p>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <p>Phone Cases</p>
-    </div>
-
+</section><section class="collections">
+  <div class="card">Printable Wall Art</div>
+  <div class="card">Poetry Downloads</div>
+  <div class="card">Phone Wallpapers</div>
+  <div class="card">Cute Bundles</div>
+</section><section class="products">
+  <div class="product">
+    <h3>Bear Phone Case</h3>
+    <p>$16.99</p>
+    <button class="btn">Add to Cart</button>
   </div>
-</section>
-
-<!-- PRODUCTS -->
-<section class="section">
-  <h2>Featured Products</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <p>Bear Phone Case</p>
-      <div class="price">$16.99</div>
-      <button class="btn">Add to Cart</button>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <p>Pink Bow Bag</p>
-      <div class="price">$24.99</div>
-      <button class="btn">Add to Cart</button>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <p>Bow Necklace</p>
-      <div class="price">$14.99</div>
-      <button class="btn">Add to Cart</button>
-    </div>
-
+  <div class="product">
+    <h3>Pink Tote Bag</h3>
+    <p>$24.99</p>
+    <button class="btn">Add to Cart</button>
   </div>
-</section>
-
-<!-- QUOTE -->
-<div class="quote">
-  "You deserve soft things, gentle moments, and a heart at peace."
-</div>
-
-<footer>
-  <p>© HoneyLuxeCloverCo</p>
-</footer>
-
-</body>
+  <div class="product">
+    <h3>Bow Necklace</h3>
+    <p>$14.99</p>
+    <button class="btn">Add to Cart</button>
+  </div>
+  <div class="product">
+    <h3>Bear Keychain</h3>
+    <p>$12.99</p>
+    <button class="btn">Add to Cart</button>
+  </div>
+</section><footer>
+  <p>© 2026 HoneyLuxeCloverCo</p>
+</footer></body>
 </html>
+  
