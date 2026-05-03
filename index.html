@@ -5,180 +5,191 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HoneyLuxeCloverCo</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #fff6f9;
-  color: #5a3e45;
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#fff0f5;
+  overflow-x:hidden;
 }
 
-/* NAV */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 30px;
-  background: white;
-  position: sticky;
-  top: 0;
+/* FLOATING BOWS */
+.bow {
+  position:fixed;
+  width:40px;
+  animation:float 8s infinite linear;
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 20px;
-  color: #e89cab;
+@keyframes float {
+  0% { transform:translateY(100vh); }
+  100% { transform:translateY(-10vh); }
 }
 
-button {
-  background: #f7a8b8;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 20px;
-  color: white;
-  cursor: pointer;
+/* HEADER */
+header {
+  padding:20px;
+  text-align:center;
+  font-size:26px;
+  color:#ff69b4;
+  font-weight:bold;
 }
 
 /* HERO */
 .hero {
-  text-align: center;
-  padding: 60px 20px;
-  background: #ffeaf0;
+  text-align:center;
+  padding:40px;
 }
 
 .hero h1 {
-  font-size: 36px;
+  font-size:36px;
 }
 
-.hero p {
-  font-style: italic;
+/* BUTTON */
+button {
+  background:linear-gradient(135deg,#ffb6c1,#ff69b4);
+  border:none;
+  padding:10px 20px;
+  border-radius:25px;
+  color:white;
+  cursor:pointer;
+  margin-top:10px;
 }
 
 /* PRODUCTS */
 .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 20px;
-  padding: 30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  padding:30px;
 }
 
 .card {
-  background: white;
-  padding: 15px;
-  border-radius: 15px;
-  text-align: center;
+  background:white;
+  border-radius:20px;
+  padding:15px;
+  text-align:center;
 }
 
 .card img {
-  width: 100%;
-  border-radius: 10px;
+  width:100%;
+  border-radius:15px;
 }
 
 /* CART */
 .cart {
-  position: fixed;
-  right: 0;
-  top: 0;
-  background: white;
-  width: 300px;
-  height: 100%;
-  padding: 20px;
-  display: none;
-  overflow: auto;
+  position:fixed;
+  right:0;
+  top:0;
+  width:300px;
+  height:100%;
+  background:white;
+  padding:20px;
+  display:none;
+  overflow:auto;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">HoneyLuxeCloverCo 🎀</div>
+<!-- FLOATING BOWS -->
+<img class="bow" style="left:10%" src="https://i.imgur.com/OdL0XPt.png">
+<img class="bow" style="left:40%" src="https://i.imgur.com/OdL0XPt.png">
+<img class="bow" style="left:70%" src="https://i.imgur.com/OdL0XPt.png">
+
+<header>HoneyLuxeCloverCo 🎀</header>
+
+<div class="hero">
+  <h1>Soft luxury for gentle souls</h1>
+  <button onclick="scrollToShop()">Browse 💕</button>
   <button onclick="toggleCart()">Cart (<span id="count">0</span>)</button>
-</nav>
+</div>
 
-<section class="hero">
-  <h1>Soft luxury for gentle hearts 💗</h1>
-  <p>“Soft luxury made to be felt, not just seen.”</p>
-</section>
-
-<section class="products">
+<!-- PRODUCTS -->
+<div id="shop" class="products">
 
 <div class="card">
-<img src="https://via.placeholder.com/200">
-<h3>Bow Phone Case</h3>
-<p>$16.99</p>
-<button onclick="addToCart('Bow Phone Case',16.99)">Add to Cart</button>
+<img src="https://i.imgur.com/8Km9tLL.jpg">
+<p>Wallpaper Pack</p>
+<p>$5</p>
+<button onclick="addToCart('Wallpaper Pack',5)">Add</button>
 </div>
 
 <div class="card">
-<img src="https://via.placeholder.com/200">
-<h3>Pink Tote Bag</h3>
-<p>$24.99</p>
-<button onclick="addToCart('Pink Tote Bag',24.99)">Add to Cart</button>
+<img src="https://i.imgur.com/2nCt3Sbl.jpg">
+<p>Poem Download</p>
+<p>$3</p>
+<button onclick="addToCart('Poem',3)">Add</button>
 </div>
 
 <div class="card">
-<img src="https://via.placeholder.com/200">
-<h3>Bow Necklace</h3>
-<p>$14.99</p>
-<button onclick="addToCart('Bow Necklace',14.99)">Add to Cart</button>
+<img src="https://i.imgur.com/DvpvklR.png">
+<p>Phone Case</p>
+<p>$15</p>
+<button onclick="addToCart('Phone Case',15)">Add</button>
 </div>
 
-</section>
+</div>
 
 <!-- CART -->
 <div class="cart" id="cart">
-<h2>Your Cart 💗</h2>
-<ul id="cartItems"></ul>
+<h2>Your Cart 💖</h2>
+<ul id="items"></ul>
 <p>Total: $<span id="total">0</span></p>
 
-<button onclick="payCashApp()">Pay with Cash App</button>
+<button onclick="payCashApp()">Pay CashApp</button>
 <br><br>
-<button onclick="sendOrder()">Place Order (Email)</button>
+<button onclick="emailOrder()">Email Order</button>
 <br><br>
 <button onclick="toggleCart()">Close</button>
 </div>
 
 <script>
-let cart = [];
+let cart=[];
 
-function addToCart(name, price) {
-  cart.push({name, price});
+function addToCart(name,price){
+  cart.push({name,price});
   updateCart();
 }
 
-function updateCart() {
-  let list = document.getElementById("cartItems");
-  let total = 0;
-  list.innerHTML = "";
+function updateCart(){
+  let list=document.getElementById("items");
+  let total=0;
+  list.innerHTML="";
 
-  cart.forEach(item => {
-    let li = document.createElement("li");
-    li.textContent = item.name + " - $" + item.price;
+  cart.forEach(item=>{
+    let li=document.createElement("li");
+    li.textContent=item.name+" - $"+item.price;
     list.appendChild(li);
-    total += item.price;
+    total+=item.price;
   });
 
-  document.getElementById("total").textContent = total;
-  document.getElementById("count").textContent = cart.length;
+  document.getElementById("total").textContent=total;
+  document.getElementById("count").textContent=cart.length;
 }
 
-function toggleCart() {
-  let cartBox = document.getElementById("cart");
-  cartBox.style.display = cartBox.style.display === "block" ? "none" : "block";
+function toggleCart(){
+  let c=document.getElementById("cart");
+  c.style.display=c.style.display==="block"?"none":"block";
 }
 
-function payCashApp() {
-  window.location.href = "https://cash.app/$Jaeleeyahcodie13";
+function payCashApp(){
+  window.location.href="https://cash.app/$Jaeleeyahcodie13";
 }
 
-function sendOrder() {
-  let body = "Order:\n";
-  cart.forEach(item => {
-    body += item.name + " - $" + item.price + "%0D%0A";
+function emailOrder(){
+  let body="Order:%0D%0A";
+  cart.forEach(item=>{
+    body+=item.name+" - $"+item.price+"%0D%0A";
   });
 
-  window.location.href =
-  "mailto:Jaeleeyahcodie1@gmail.com?subject=New Order&body=" + body;
+  window.location.href="mailto:Jaeleeyahcodie1@gmail.com?subject=Order&body="+body;
+}
+
+function scrollToShop(){
+  document.getElementById("shop").scrollIntoView({behavior:"smooth"});
 }
 </script>
 
