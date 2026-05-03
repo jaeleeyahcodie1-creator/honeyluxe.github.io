@@ -5,193 +5,173 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HoneyLuxeCloverCo</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#fff0f5;
-  overflow-x:hidden;
-}
-
-/* FLOATING BOWS */
-.bow {
-  position:fixed;
-  width:40px;
-  animation:float 8s infinite linear;
-}
-
-@keyframes float {
-  0% { transform:translateY(100vh); }
-  100% { transform:translateY(-10vh); }
+  font-family:'Poppins', sans-serif;
+  background:#fff5f7;
+  color:#5a3e3e;
 }
 
 /* HEADER */
 header {
-  padding:20px;
+  background:white;
+  padding:15px;
   text-align:center;
-  font-size:26px;
-  color:#ff69b4;
-  font-weight:bold;
+  border-bottom:1px solid #ffd6df;
+}
+.logo {
+  font-family:'Playfair Display', serif;
+  font-size:28px;
+  color:#ff8fb1;
 }
 
 /* HERO */
 .hero {
   text-align:center;
-  padding:40px;
+  padding:50px 20px;
+  background:linear-gradient(#ffe6ec, #fff);
 }
-
 .hero h1 {
+  font-family:'Playfair Display', serif;
   font-size:36px;
 }
-
-/* BUTTON */
-button {
-  background:linear-gradient(135deg,#ffb6c1,#ff69b4);
-  border:none;
-  padding:10px 20px;
-  border-radius:25px;
+.hero p {
+  color:#a36b7c;
+}
+.btn {
+  background:#ff8fb1;
   color:white;
-  cursor:pointer;
-  margin-top:10px;
-}
-
-/* PRODUCTS */
-.products {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
-  padding:30px;
-}
-
-.card {
-  background:white;
+  padding:12px 25px;
+  border:none;
   border-radius:20px;
-  padding:15px;
+  cursor:pointer;
+  margin-top:15px;
+}
+
+/* SECTIONS */
+.section {
+  padding:40px 20px;
   text-align:center;
 }
 
-.card img {
-  width:100%;
-  border-radius:15px;
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
+  gap:15px;
 }
 
-/* CART */
-.cart {
-  position:fixed;
-  right:0;
-  top:0;
-  width:300px;
-  height:100%;
+/* CARDS */
+.card {
   background:white;
+  padding:15px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+.card img {
+  width:100%;
+  border-radius:10px;
+}
+.price {
+  color:#ff6f9c;
+  font-weight:bold;
+}
+
+/* QUOTE BUBBLE */
+.quote {
+  background:#ffe3ec;
   padding:20px;
-  display:none;
-  overflow:auto;
+  border-radius:20px;
+  margin:20px;
+  font-style:italic;
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:30px;
+  background:#fff;
+  margin-top:40px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- FLOATING BOWS -->
-<img class="bow" style="left:10%" src="https://i.imgur.com/OdL0XPt.png">
-<img class="bow" style="left:40%" src="https://i.imgur.com/OdL0XPt.png">
-<img class="bow" style="left:70%" src="https://i.imgur.com/OdL0XPt.png">
+<header>
+  <div class="logo">HoneyLuxeCloverCo</div>
+</header>
 
-<header>HoneyLuxeCloverCo 🎀</header>
+<section class="hero">
+  <h1>Soft art & words</h1>
+  <p>for gentle souls</p>
+  <button class="btn">Browse Collection</button>
+</section>
 
-<div class="hero">
-  <h1>Soft luxury for gentle souls</h1>
-  <button onclick="scrollToShop()">Browse 💕</button>
-  <button onclick="toggleCart()">Cart (<span id="count">0</span>)</button>
-</div>
+<!-- COLLECTION -->
+<section class="section">
+  <h2>Shop by Collection</h2>
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://via.placeholder.com/200">
+      <p>Wallpapers</p>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/200">
+      <p>Poems</p>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/200">
+      <p>Phone Cases</p>
+    </div>
+
+  </div>
+</section>
 
 <!-- PRODUCTS -->
-<div id="shop" class="products">
+<section class="section">
+  <h2>Featured Products</h2>
 
-<div class="card">
-<img src="https://i.imgur.com/8Km9tLL.jpg">
-<p>Wallpaper Pack</p>
-<p>$5</p>
-<button onclick="addToCart('Wallpaper Pack',5)">Add</button>
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://via.placeholder.com/200">
+      <p>Bear Phone Case</p>
+      <div class="price">$16.99</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/200">
+      <p>Pink Bow Bag</p>
+      <div class="price">$24.99</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/200">
+      <p>Bow Necklace</p>
+      <div class="price">$14.99</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote">
+  "You deserve soft things, gentle moments, and a heart at peace."
 </div>
 
-<div class="card">
-<img src="https://i.imgur.com/2nCt3Sbl.jpg">
-<p>Poem Download</p>
-<p>$3</p>
-<button onclick="addToCart('Poem',3)">Add</button>
-</div>
-
-<div class="card">
-<img src="https://i.imgur.com/DvpvklR.png">
-<p>Phone Case</p>
-<p>$15</p>
-<button onclick="addToCart('Phone Case',15)">Add</button>
-</div>
-
-</div>
-
-<!-- CART -->
-<div class="cart" id="cart">
-<h2>Your Cart 💖</h2>
-<ul id="items"></ul>
-<p>Total: $<span id="total">0</span></p>
-
-<button onclick="payCashApp()">Pay CashApp</button>
-<br><br>
-<button onclick="emailOrder()">Email Order</button>
-<br><br>
-<button onclick="toggleCart()">Close</button>
-</div>
-
-<script>
-let cart=[];
-
-function addToCart(name,price){
-  cart.push({name,price});
-  updateCart();
-}
-
-function updateCart(){
-  let list=document.getElementById("items");
-  let total=0;
-  list.innerHTML="";
-
-  cart.forEach(item=>{
-    let li=document.createElement("li");
-    li.textContent=item.name+" - $"+item.price;
-    list.appendChild(li);
-    total+=item.price;
-  });
-
-  document.getElementById("total").textContent=total;
-  document.getElementById("count").textContent=cart.length;
-}
-
-function toggleCart(){
-  let c=document.getElementById("cart");
-  c.style.display=c.style.display==="block"?"none":"block";
-}
-
-function payCashApp(){
-  window.location.href="https://cash.app/$Jaeleeyahcodie13";
-}
-
-function emailOrder(){
-  let body="Order:%0D%0A";
-  cart.forEach(item=>{
-    body+=item.name+" - $"+item.price+"%0D%0A";
-  });
-
-  window.location.href="mailto:Jaeleeyahcodie1@gmail.com?subject=Order&body="+body;
-}
-
-function scrollToShop(){
-  document.getElementById("shop").scrollIntoView({behavior:"smooth"});
-}
-</script>
+<footer>
+  <p>© HoneyLuxeCloverCo</p>
+</footer>
 
 </body>
 </html>
